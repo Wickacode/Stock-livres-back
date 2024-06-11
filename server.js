@@ -17,3 +17,16 @@ server.post("/test", (req, res) => {
     console.log("Demande reçue avec la méthode POST sur l'url /test")
     res.end("Demande POST reçue")
 });
+
+//Gère l'erreur 
+server.use((req, res, suite) => {
+    const error = new Error("Page non trouvée");
+    error.status = 404;
+    suite(error);
+})
+
+//Gère toutes les erreurs 
+server.use((error, req, res) => {
+    res.status(error.status || 500);
+    res.end(error.message);
+})
