@@ -6,10 +6,10 @@ Depuis le fichier router.js et de le récupérer dans le serveur
 
 var express = require('express');
 var router = express.Router();
+const twig = require("twig");
 
 router.get("/", (req, res) => {
-    console.log("Page d'accueil demandée")
-    res.end("Page d'accueil demandée")
+    res.render("home.html.twig")
 });
 
 router.post("/test", (req, res) => {
