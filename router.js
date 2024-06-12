@@ -16,6 +16,9 @@ router.get("/livres", (req, res) => {
   res.render("livres/list.html.twig");
 });
 
+router.get("/livres/:nom", (req, res) => {
+  res.render("livres/livre.html.twig", { nom: req.params.nom });
+});
 //Gère l'erreur
 router.use((req, res, suite) => {
   const error = new Error("Page non trouvée");
