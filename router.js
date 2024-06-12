@@ -4,30 +4,29 @@ Pour récupérer le fichier router dans le server, il duffit de l'exporter (modu
 Depuis le fichier router.js et de le récupérer dans le serveur
 */
 
-var express = require('express');
+var express = require("express");
 var router = express.Router();
 const twig = require("twig");
 
 router.get("/", (req, res) => {
-    res.render("home.html.twig")
+  res.render("home.html.twig");
 });
 
-router.post("/test", (req, res) => {
-    console.log("Demande reçue avec la méthode POST sur l'url /test")
-    res.end("Demande POST reçue")
+router.get("/livres", (req, res) => {
+  res.render("livres/list.html.twig");
 });
 
-//Gère l'erreur 
+//Gère l'erreur
 router.use((req, res, suite) => {
-    const error = new Error("Page non trouvée");
-    error.status = 404;
-    suite(error);
-})
+  const error = new Error("Page non trouvée");
+  error.status = 404;
+  suite(error);
+});
 
-//Gère toutes les erreurs 
+//Gère toutes les erreurs
 router.use((error, req, res) => {
-    res.status(error.status || 500);
-    res.end(error.message);
-})
+  res.status(error.status || 500);
+  res.end(error.message);
+});
 
 module.exports = router;

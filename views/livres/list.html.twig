@@ -1,0 +1,50 @@
+{% extends "base.html.twig" %}
+{% block titre %} Liste des livres {% endblock %}
+
+{% block contenu %}
+    <table class="table text-center monTableau" id="tableauLivres">
+                <thead>
+                  <tr class="table-dark" id="titresColonne">
+                    <th>Titre</th>
+                    <th>Auteur</th>
+                    <th>Nombre de pages</th>
+                    <th colspan="2">Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody> 
+                    <tr>
+                    <td>La boite de Pandore</td>
+                    <td>Bernard Werber</td>
+                    <td>576</td>
+                    <td><a href="" class="btn btn-warning">Modifier</a></td>
+                    <td><a href="" class="btn btn-danger">Supprimer</a></td>
+                    </tr>
+
+                    <tr>
+                    <td>Le sixième sommeil</td>
+                    <td>Bernard Werber</td>
+                    <td>405</td>
+                    <td><a href="" class="btn btn-warning">Modifier</a></td>
+                    <td><a href="" class="btn btn-danger">Supprimer</a></td>
+                    </tr>
+
+                    <tr>
+                    <td>La prophétie des abeilles</td>
+                    <td>Bernard Werber</td>
+                    <td>500</td>
+                    <td><a href="" class="btn btn-warning">Modifier</a></td>
+                    <td><a href="" class="btn btn-danger">Supprimer</a></td>
+                    </tr>
+
+                    <tr>
+                    <td>La diagonale des reines</td>
+                    <td>Bernard Werber</td>
+                    <td>570</td>
+                    <td><a href="" class="btn btn-warning">Modifier</a></td>
+                    <td><a href="" class="btn btn-danger">Supprimer</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="" class="btn btn-success d-block">Ajouter</a>
+{% endblock %}
